@@ -13,7 +13,7 @@ const { name, profession, download } = Astro.props
 <section class='home' id='home'>
       <div class='home__container section bd-grid'>
         <div class='home__data bd-grid'>
-          <Image src={DanPic} alt='Profile Pic' class='home__img' format='webp' />
+          <Image loading='lazy' src={DanPic} alt='Profile Pic' class='home__img' format='webp' />
           <h1 class='home__title'>
             {name.name} <b>{name.lastName}</b>
           </h1>

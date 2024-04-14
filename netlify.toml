@@ -1,2 +1,3 @@
 [build]
-  command = "NODE_OPTIONS=--max_old_space_size=4096 pnpm build"
+  command = "npm run build --max_old_space_size=100000""
+  publish = "dist"
