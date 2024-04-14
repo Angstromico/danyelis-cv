@@ -1,0 +1,29 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Main from '../../components/Main.astro'
+import { getLangFromUrl, useTranslations } from '../../i18n/utils'
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const name = {name: 'Danyelis', lastName: 'Coronel'}
+
+const education = [{title: t('education'), academy: t('education.college'), year: '2013 | 2018'}, {title: t('education.degree'), academy: t('education.academy'), year: 2022}, {title: t('education.secondDegree'), academy: t('education.academy'), year: 2022}, {title: t('education.thirdDegree'), academy: t('education.academy'), year: 2023}, {title: t('education.fourthDegree'), academy: t('education.academy'), year: 2023}, {title: t('education.fifthDegree'), academy: t('education.academy'), year: 2023}]
+
+const showEducation = {less: t('education.showLess'), more: t('education.showMore')}
+
+const skills = [t('skills.skill1'), t('skills.skill2'), t('skills.skill3'), t('skills.skill4'), t('skills.skill5'), t('skills.skill6')]
+
+const experiences = [{name: t('experience.title'), description: t('experience.description'), company: 'Plasticion C.A. - 2017 | 2018'}, {name: t('experience.title2'), description: t('experience.description2'), company: 'PDVSA - 2018'}, {name: t('experience.title3'), description: t('experience.description3'), company: 'PMV Plastmel de Venezuela C.A. - 2019 | 2020'}]
+
+const referenses = [{name: 'Manuel Morales', title: t('referenses.title'), phone: '+58 414-4021058', mail: 'manuesteban1990@gmail.com'}, {name: 'Brassel Vielma', title: t('referenses.title2'), phone: '+58 424-4460398', mail: 'brasselvielma85@gmail.com'}, {name: 'Gabriela Montenegro', title: t('referenses.title3'), phone: '+58 424-4214803', mail: 'gabriella1536@gmail.com'}]
+
+const interests = [{name: t('interests.name'), icon: 'headphone'}, {name: t('interests.name2'), icon: 'spa'}, {name: t('interests.name3'), icon: 'cable-car'}, {name: 'TV', icon: 'tv'}, {name: t('interests.name4'), icon: 'dumbbell'}, {name: t('interests.name5'), icon: 'party'}] 
+---
+
+<Layout title="Danyelis Coronel Curriculum">
+	<main class="l-main bd-container">
+		<Main name={name} profession={t('home.profession')} download={t('home.download')} profile={t('profile')} description={t('profile.description')} education={t('education')} educationData={education} skillsTitle={t('skills')} showEducation={showEducation} skills={skills} experience={t('experince')} experiences={experiences} referenses={t('referenses')} referensesInfo={referenses} interest={t('interests')} herInterests={interests} />
+	</main>
+</Layout>
+
+
